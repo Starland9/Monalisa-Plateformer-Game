@@ -1,0 +1,67 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwbjboqr8hkrl"]
+
+[ext_resource type="Script" path="res://Characters/Adventure Girl/adventure_girl.gd" id="1_plnmu"]
+[ext_resource type="Texture2D" uid="uid://eu80puhwcnrx" path="res://Assets/Characters/Adventure Girl/png/Idle (1).png" id="1_u0mkl"]
+[ext_resource type="Texture2D" uid="uid://cxddrk0hor4is" path="res://Assets/Characters/Adventure Girl/png/Idle (2).png" id="2_lnsf2"]
+[ext_resource type="Texture2D" uid="uid://bq5mr72wepfy8" path="res://Assets/Characters/Adventure Girl/png/Idle (3).png" id="3_mgwl3"]
+[ext_resource type="Texture2D" uid="uid://bfaj81eg1v51" path="res://Assets/Characters/Adventure Girl/png/Idle (4).png" id="4_y7wtv"]
+[ext_resource type="Texture2D" uid="uid://nc2gk41cuh72" path="res://Assets/Characters/Adventure Girl/png/Idle (5).png" id="5_fkcoq"]
+[ext_resource type="Texture2D" uid="uid://b86asjdjxjq06" path="res://Assets/Characters/Adventure Girl/png/Idle (6).png" id="6_efl17"]
+[ext_resource type="Texture2D" uid="uid://ctkp4tvby4rsb" path="res://Assets/Characters/Adventure Girl/png/Idle (7).png" id="7_bnlhq"]
+[ext_resource type="Texture2D" uid="uid://ch6b0qr1n5djr" path="res://Assets/Characters/Adventure Girl/png/Idle (8).png" id="8_wado5"]
+[ext_resource type="Texture2D" uid="uid://u0tcas8k3o4s" path="res://Assets/Characters/Adventure Girl/png/Idle (9).png" id="9_5wk3t"]
+[ext_resource type="Texture2D" uid="uid://cn4e68hcwi7in" path="res://Assets/Characters/Adventure Girl/png/Idle (10).png" id="10_w6yfp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lv0gt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_u0mkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lnsf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mgwl3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y7wtv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fkcoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_efl17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bnlhq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wado5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5wk3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_w6yfp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvvmn"]
+radius = 88.0
+height = 412.0
+
+[node name="AdventureGirl" type="CharacterBody2D"]
+script = ExtResource("1_plnmu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lv0gt")
+animation = &"idle"
+frame_progress = 0.976127
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-43, 21)
+shape = SubResource("CapsuleShape2D_mvvmn")

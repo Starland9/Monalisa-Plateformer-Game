@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c77yxebpbhkv3"]
+
+[ext_resource type="Texture2D" uid="uid://cktkfixfqcar6" path="res://Assets/Environment/BG/BG.png" id="1_0hu41"]
+
+[sub_resource type="TileSet" id="TileSet_w7gk4"]
+
+[node name="Level" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-9, -103)
+scale = Vector2(1.00933, 1.00933)
+texture = ExtResource("1_0hu41")
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_w7gk4")
+format = 2
+layer_0/name = "background"
